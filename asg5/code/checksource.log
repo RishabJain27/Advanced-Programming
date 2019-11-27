@@ -1,0 +1,15 @@
+checksource: improper character \x0D = ^M (carriage return)
+   file "README": 16 errors: lines 1--16
+   file "debug.cpp": 35 errors: lines 1--35
+   file "debug.h": 63 errors: lines 1--63
+   file "main.cpp": 106 errors: lines 1--106
+   file "rgbcolor.cpp": 50 errors: lines 1--50
+   file "rgbcolor.h": 33 errors: lines 1--33
+   file "util.cpp": 79 errors: lines 1--79
+   file "util.h": 124 errors: lines 1--124
+checksource: line length > 144 characters
+   file "HEADER.html": 1 errors: line 16
+checksource: line length > 72 characters
+   file "HEADER.html": 2 errors: lines 15--16
+   file "rgbcolor.cpp": 2 errors: lines 27, 30
+checksource: TOTAL COMPLAINTS: 511

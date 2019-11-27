@@ -1,0 +1,23 @@
+gmake --no-print-directory dep
+g++ -std=gnu++17 -MM -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never commands.cpp debug.cpp file_sys.cpp util.cpp main.cpp >>Makefile.dep
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl commands.cpp
+Done processing commands.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource commands.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c commands.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl debug.cpp
+Done processing debug.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource debug.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c debug.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl file_sys.cpp
+Done processing file_sys.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource file_sys.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c file_sys.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl util.cpp
+Done processing util.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource util.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c util.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl main.cpp
+Done processing main.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource main.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c main.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -o yshell commands.o debug.o file_sys.o util.o main.o

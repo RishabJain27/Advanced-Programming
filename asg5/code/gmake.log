@@ -1,0 +1,67 @@
+gmake --no-print-directory dep
+mk-colors.perl >colors.cppgen
+g++ -std=gnu++17 -MM -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never graphics.cpp interp.cpp rgbcolor.cpp shape.cpp debug.cpp util.cpp main.cpp >>Makefile.dep
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c graphics.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource graphics.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl graphics.cpp
+Done processing graphics.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c interp.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource interp.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl interp.cpp
+Done processing interp.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c rgbcolor.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource rgbcolor.cpp
+checksource: improper character \x0D = ^M (carriage return)
+   file "rgbcolor.cpp": 50 errors: lines 1--50
+checksource: line length > 72 characters
+   file "rgbcolor.cpp": 2 errors: lines 27, 30
+checksource: TOTAL COMPLAINTS: 52
+gmake: [Makefile:34: rgbcolor.o] Error 1 (ignored)
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl rgbcolor.cpp
+rgbcolor.cpp:27:  Lines should very rarely be longer than 90 characters  [whitespace/line_length] [4]
+rgbcolor.cpp:30:  Lines should very rarely be longer than 90 characters  [whitespace/line_length] [4]
+Done processing rgbcolor.cpp
+Total errors found: 2
+checksource: improper character \x0D = ^M (carriage return)
+   file "rgbcolor.cpp": 50 errors: lines 1--50
+checksource: line length > 72 characters
+   file "rgbcolor.cpp": 2 errors: lines 27, 30
+checksource: TOTAL COMPLAINTS: 52
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c shape.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource shape.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl shape.cpp
+Done processing shape.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c debug.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource debug.cpp
+checksource: improper character \x0D = ^M (carriage return)
+   file "debug.cpp": 35 errors: lines 1--35
+checksource: TOTAL COMPLAINTS: 35
+gmake: [Makefile:34: debug.o] Error 1 (ignored)
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl debug.cpp
+Done processing debug.cpp
+checksource: improper character \x0D = ^M (carriage return)
+   file "debug.cpp": 35 errors: lines 1--35
+checksource: TOTAL COMPLAINTS: 35
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c util.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource util.cpp
+checksource: improper character \x0D = ^M (carriage return)
+   file "util.cpp": 79 errors: lines 1--79
+checksource: TOTAL COMPLAINTS: 79
+gmake: [Makefile:34: util.o] Error 1 (ignored)
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl util.cpp
+Done processing util.cpp
+checksource: improper character \x0D = ^M (carriage return)
+   file "util.cpp": 79 errors: lines 1--79
+checksource: TOTAL COMPLAINTS: 79
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -c main.cpp
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/checksource main.cpp
+checksource: improper character \x0D = ^M (carriage return)
+   file "main.cpp": 106 errors: lines 1--106
+checksource: TOTAL COMPLAINTS: 106
+gmake: [Makefile:34: main.o] Error 1 (ignored)
+/afs/cats.ucsc.edu/courses/cmps109-wm/bin/cpplint.py.perl main.cpp
+Done processing main.cpp
+checksource: improper character \x0D = ^M (carriage return)
+   file "main.cpp": 106 errors: lines 1--106
+checksource: TOTAL COMPLAINTS: 106
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -Wold-style-cast -fdiagnostics-color=never -o gdraw graphics.o interp.o rgbcolor.o shape.o debug.o util.o main.o -lGL -lGLU -lglut -ldrm -lm
